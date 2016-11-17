@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.panelflip-container > .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+	transform-style: preserve-3d;
+}
+
+.panelflip-container.active > .inner
+{
+	transform: rotateY(180deg);
+}
+
+.panelflip-container > .inner > div
+{
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+	transform: rotateY(0deg);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.panelflip-container > .inner > div + div {
+	transform: rotateY(180deg);
+    z-index: auto;
+}
